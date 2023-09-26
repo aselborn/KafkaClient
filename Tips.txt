@@ -1,0 +1,1 @@
+﻿avrogen -s user.avro ..\Model\ --namespace kafkaclient.Model:kafkaclient.Model

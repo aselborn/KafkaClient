@@ -1,0 +1,12 @@
+﻿{
+	"type" : "record",
+	"name" : "UserRegistration",
+	"namespace" : "UserRegistration",
+	"fields": [
+		{
+			"name" : "userId", "type": "string",
+			"name" : "userName", "type": "string",
+			"name" : "email", "type": "string"
+		}
+	]
+}
