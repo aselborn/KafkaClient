@@ -28,7 +28,7 @@ namespace kafkaclient
                     .Build();
 
                 consumer.Subscribe(_topicName);
-                Console.WriteLine($"Prenumererar på {_topicName}");
+                //Console.WriteLine($"Prenumererar på {_topicName}");
 
                 ConsumeMessage(token, consumer);
 
@@ -56,12 +56,11 @@ namespace kafkaclient
                 {
                     var consumeResult = consumer.Consume(token);
 
-                    Console.WriteLine($"Consumed message {consumeResult.Message.Value.vesselName} on topic {consumeResult.Message.Key}",
-                        consumeResult.Message, consumeResult.Topic);
-
+                    Console.WriteLine($"Konsumerade meddelande med fartygsnamn = {consumeResult.Message.Value.vesselName} on topic {consumeResult.Topic}");
+                        
                     var data = JsonSerializer.Serialize(consumeResult.Message);
 
-                    Console.WriteLine(data);
+                    //Console.WriteLine(data);
 
                     //EntityReceived?.Invoke(this, new CustomEventArgs<WorkQueue.topic.v1.WorkQueue>(consumeResult.Message.Value));
                 }
